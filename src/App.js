@@ -1,12 +1,23 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
 
+import { API } from "./api/api";
+
+import Header from "./components/Header/Header";
 import Homepage from "./components/Homepage/Homepage";
 import Products from "./components/Products/Products";
 
 class App extends Component {
+  async componentDidMount() {
+    try {
+      const { data } = await API.get("/shoes");
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   render() {
     return (
       <>
