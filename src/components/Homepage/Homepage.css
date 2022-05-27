@@ -1,0 +1,19 @@
+.homepage-container {
+  height: 93vh;
+  display: flex;
+
+  justify-content: center;
+  text-align: center;
+  background: url("https://media.gq-magazine.co.uk/photos/621cbc0f73021b051fcbc729/master/w_1920,h_1280,c_limit/24022022_A_13.jpeg")
+    no-repeat center center/contain;
+}
+
+.hp-header {
+  color: #cd5200;
+}
+
+@media (max-width: 768px) {
+  .hp-header {
+    margin-top: 100px;
+  }
+}
