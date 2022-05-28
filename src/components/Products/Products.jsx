@@ -3,6 +3,7 @@ import Item from "../Item/Item";
 import PopUp from "../PopUp/PopUp";
 import { API } from "../../api/api";
 import "./Products.css";
+import Spinner from "../Spinner/Spinner";
 
 class Products extends Component {
   state = {
@@ -19,7 +20,6 @@ class Products extends Component {
     try {
       const { data } = await API.get("/shoes");
       this.setState({ products: data, isSpinning: false });
-      console.log(data);
     } catch (e) {
       console.log(e);
     }
@@ -32,9 +32,7 @@ class Products extends Component {
   };
 
   handleOnChange = (target, inputType) => {
-    this.setState({ [inputType]: target.value }, () =>
-      console.log(this.state[inputType])
-    );
+    this.setState({ [inputType]: target.value });
   };
 
   handleCreateClick = () => {
@@ -136,7 +134,7 @@ class Products extends Component {
     return (
       <>
         {this.state.isSpinning ? (
-          <h1>Spinner</h1>
+          <Spinner />
         ) : (
           <div className="products-page">
             <button className="btn" onClick={this.toggleIsCreating}>
