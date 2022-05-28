@@ -9,9 +9,15 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   padding: 0 10px;
   color: white;
+  width: 80px;
+}
+
+.nav-link:hover {
+  background-color: #ffa264;
 }
 
 .active {

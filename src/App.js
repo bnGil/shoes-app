@@ -9,9 +9,11 @@ import Homepage from "./components/Homepage/Homepage";
 import Products from "./components/Products/Products";
 
 class App extends Component {
+  state = { products: [] };
   async componentDidMount() {
     try {
       const { data } = await API.get("/shoes");
+      this.setState({ products: data });
       console.log(data);
     } catch (e) {
       console.log(e);
