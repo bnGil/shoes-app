@@ -13,12 +13,21 @@ class ReadMore extends Component {
 
   render() {
     const { children } = this.props;
+    const limit = 150;
     return (
       <>
-        {this.state.isReadMoreShown ? children : children.substring(0, 150)}
-        <span className="readmore" onClick={this.toggleReadMore}>
-          ...Read More
-        </span>
+        {children.length < limit ? (
+          children
+        ) : (
+          <>
+            {this.state.isReadMoreShown
+              ? children
+              : children.substring(0, limit)}
+            <span className="readmore" onClick={this.toggleReadMore}>
+              {this.state.isReadMoreShown ? "...Read less" : "...Read more"}
+            </span>
+          </>
+        )}
       </>
     );
   }
