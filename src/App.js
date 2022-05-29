@@ -14,18 +14,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route
-              exact
-              path="/products"
-              // render={(props) => (
-              //   <Products
-              //     {...props}
-              //     products={this.state.products}
-              //     isSpinning={this.state.isSpinning}
-              //   />
-              // )}
-              component={Products}
-            />
+            <Route exact path="/products" component={Products} />
           </Switch>
         </Router>
       </>
